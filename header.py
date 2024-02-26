@@ -26,6 +26,8 @@ class AppHeader(UserControl):
             width= 320,
             bgcolor= 'white10',
             border_radius= 6,
+            opacity= 0,
+            animate_opacity= 0,
             padding=8,
             content=Row(
                 spacing=10,
@@ -50,6 +52,18 @@ class AppHeader(UserControl):
             ),
 
         )
+    
+    def app_header_avatar(self):
+        return Container(content= IconButton(icons.PERSON))
+
+    def show_search_bar(self, e):
+        if e.data == 'true':
+            self.controls[0].content.controls[1].opacity = 1
+            self.controls[0].content.controls[1].update()
+        else:
+            self.controls[0].content.controls[1].content.controls[1].value = ""
+            self.controls[0].content.controls[1].opacity = 0
+            self.controls[0].content.controls[1].update()
 
     def build(self):
         self.app_header_instance()
@@ -67,6 +81,7 @@ class AppHeader(UserControl):
                 controls=[
                     self.app_header_brand(),
                     self.app_header_search(),
+                    self.app_header_avatar(),
                 ],
             ),
         )
