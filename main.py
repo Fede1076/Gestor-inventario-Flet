@@ -1,5 +1,6 @@
 import flet as ft
 from flet import *
+from form_login import login
 from UI_inventario import AppHeader, AppForm, AppProducts
 
 def main(page: ft.Page):
@@ -14,7 +15,9 @@ def main(page: ft.Page):
                 AppForm(),
                 Divider(height= 2, color="transparent"),
                 AppProducts()
+                
             ],
         ),
     )
+    page.update()
     pass

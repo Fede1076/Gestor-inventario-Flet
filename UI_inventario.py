@@ -46,7 +46,7 @@ class AppHeader(UserControl):
                         cursor_color="black",
                         cursor_width=1,
                         cursor_height=18,
-                        color="black",
+                        color="white",
                         hint_text="Buscar",
                     )
                 ],
@@ -204,6 +204,8 @@ class AppProducts(UserControl):
                             Text(value="Referencia", size=12, color="black", weight="bold"),
                             Text(value="Nombre", size=12, color="black", weight="bold"),
                             Text(value="Cantidad", size=12, color="black", weight="bold"),
+                            Text(value="Editar", size=12, color="black", weight="bold"),
+                            Text(value="Eliminar", size=12, color="black", weight="bold"),
                         ]
                     ),
                     # Aquí se mostrarían los productos del inventario con referencia, nombre y cantidad
