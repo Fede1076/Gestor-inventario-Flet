@@ -1,7 +1,6 @@
 import flet as ft
 from flet import *
-from header import AppHeader
-from form import AppForm
+from UI_inventario import AppHeader, AppForm, AppProducts
 
 def main(page: ft.Page):
     page.bgcolor = '#fdfdfd'
@@ -12,12 +11,10 @@ def main(page: ft.Page):
             controls=[
                 AppHeader(),
                 Divider(height= 2, color="transparent"),
-                AppForm()
-            ]
-        )
+                AppForm(),
+                Divider(height= 2, color="transparent"),
+                AppProducts()
+            ],
+        ),
     )
     pass
-
-
-if __name__== "__main__":
-    ft.app(target=main)
